@@ -1,0 +1,6 @@
+---
+- name: Install nginx and dependencies
+  hosts: nginx
+  
+  roles:
+    - { role: nginx }

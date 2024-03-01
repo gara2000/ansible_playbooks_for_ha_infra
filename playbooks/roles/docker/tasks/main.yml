@@ -1,8 +1,17 @@
+- name: Update without taking into account the time zone
+  become: yes
+  command: apt-get update -o Acquire::Check-Valid-Until=false -o Acquire::Check-Date=false
+  no_log: true
+
 - name: Install aptitude
   apt:
     name: aptitude
     state: latest
-    update_cache: true
+
+- name: Update without taking into account the time zone
+  become: yes
+  command: apt-get update -o Acquire::Check-Valid-Until=false -o Acquire::Check-Date=false
+  no_log: true
 
 - name: Install required system packages
   apt:
@@ -15,8 +24,6 @@
       - virtualenv
       - python3-setuptools
     state: latest
-    update_cache: true
-
 
 - name: Add Docker GPG apt Key
   apt_key:
@@ -28,13 +35,17 @@
     repo: deb https://download.docker.com/linux/ubuntu jammy stable
     state: present
 
+- name: Update without taking into account the time zone
+  become: yes
+  command: apt-get update -o Acquire::Check-Valid-Until=false -o Acquire::Check-Date=false
+  no_log: true
+
 - name: Update apt and install docker-ce and docker-compose
   apt:
     name: 
       - docker-ce 
       - docker-compose
     state: latest
-    update_cache: true
 
 - name: Install Docker Module for Python
   pip:
