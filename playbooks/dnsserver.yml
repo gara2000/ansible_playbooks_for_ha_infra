@@ -1,0 +1,7 @@
+---
+- name:
+  hosts: dns
+  become: yes
+
+  roles:
+    - { role: dnsserver }

@@ -1,0 +1,27 @@
+$TTL 604800
+@	IN	SOA dns1.robust.net. admin.robust.net. (
+	11	; Serial
+	604800	; Refresh
+	86400	; Retry
+	2419200	; Expire
+	604800 ); Negative Cache TTL
+;
+; Name servers
+robust.net.	IN	NS	dns1.robust.net.
+;robust.net.	IN	NS	dns2.robust.net.
+; A records for name servers
+dns1	IN	A	192.168.56.2
+;dns2	IN	A	192.168.56.10
+; Other A records
+@	IN	A	192.168.56.2
+infra1	IN	A	192.168.56.2
+ansible	IN	CNAME	infra1
+;infra2	IN	A	192.168.56.10
+; nodes
+node1	IN	A	192.168.56.3
+node2	IN	A	192.168.56.4
+; storage
+storage	IN	A	192.168.56.5
+; gw
+vip-gw	IN	A	192.168.56.200
+
