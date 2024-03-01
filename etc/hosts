@@ -10,3 +10,6 @@ node2
 [nginx]
 node1
 node2
+
+[dns]
+infra1
