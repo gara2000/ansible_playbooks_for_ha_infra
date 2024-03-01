@@ -1,0 +1,9 @@
+- name: Modify systemd-resolve configuration file /etc/systemd/resolved.conf
+  lineinfile:
+    path: /etc/systemd/resolved.conf
+    line: "{{ item }}"
+    insertafter: '\[Resolve\]'
+  with_items:
+    - "DNS=192.168.56.2"
+    - "Domains=robust.net"
+  notify: restart_resolver
