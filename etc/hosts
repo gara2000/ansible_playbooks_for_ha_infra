@@ -13,3 +13,6 @@ node2
 
 [dns]
 infra1
+
+[registry]
+cassa@host

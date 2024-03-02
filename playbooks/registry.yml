@@ -1,0 +1,7 @@
+---
+- name: "Build registry in the host"
+  hosts: registry
+  become: yes
+
+  roles:
+    - { role: registry }

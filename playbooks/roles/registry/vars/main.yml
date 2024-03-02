@@ -1,0 +1,5 @@
+---
+registry_path : /home/cassa/workdir/ansible_for_ha/registry
+registry_hostname : registry.robust.net
+registry_port : 5000
+gen_cert: 'yes'
